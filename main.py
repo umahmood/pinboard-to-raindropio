@@ -20,7 +20,7 @@ def write_to_csv(rows: list, filename: str):
             for row in rows:
                 spamwriter.writerow(row)
     except PermissionError as e:
-        print(f"permission denied when saving to {csv_file}.")
+        print(f"permission denied when saving to {filename}.")
 
 
 def read_pinboard_json_file(filename: str):
@@ -29,7 +29,7 @@ def read_pinboard_json_file(filename: str):
             bookmarks = json.loads(reader.read())
             return bookmarks
     except FileNotFoundError as e:
-        print(f"file {pinboard_bookmarks} not found.")
+        print(f"file {filename} not found.")
 
 
 def convert_json_to_csv(bookmarks: list, collection: str):
